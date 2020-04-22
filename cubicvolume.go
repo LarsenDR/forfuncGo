@@ -22,7 +22,7 @@ func cubicvolume(sdia float64, ldia float64, length float64, equationtype string
 			Al = math.Pi / (4.0 * 144.0) * math.Pow((ldia), 2.0)
 		}
 
-		if equationtype == "smailian" {
+		if equationtype == "smalian" {
 			value = length / 2.0 * (As + Al)
 		} else if equationtype == "cone" {
 			value = length / 3.0 * (As + math.Sqrt(As*Al) + Al)
@@ -38,7 +38,7 @@ func cubicvolume(sdia float64, ldia float64, length float64, equationtype string
 			Al = math.Pi / (4.0 * 10000.0) * math.Pow((ldia), 2.0)
 		}
 
-		if equationtype == "smailian" {
+		if equationtype == "smalian" {
 			value = length / 2.0 * (As + Al)
 		} else if equationtype == "cone" {
 			value = length / 3.0 * (As + math.Sqrt(As*Al) + Al)
@@ -46,15 +46,15 @@ func cubicvolume(sdia float64, ldia float64, length float64, equationtype string
 			value = length / 4.0 * (As + math.Cbrt(math.Pow(As, 2.0)*Al) + math.Cbrt(As*math.Pow(Al, 2)) + Al)
 		}
 	} else {
-		fmt.Println("Unknown unittype,", unittype, " options are imperial or metric")
+		fmt.Println("\nUnknown unittype,", unittype, " options are imperial or metric\n")
 	}
 	return value
 }
 
 func main() {
-	fmt.Println("smalian =", cubicvolume(10.0, 12.0, 16.0, "smailian", "imperial", false))
-	fmt.Println("smalian =", cubicvolume(25.0, 29.0, 5.0, "smailian", "metric", false))
-	fmt.Println("smalian =", cubicvolume(10.0, 12.0, 16.0, "smailian", "cunits", false))
+	fmt.Println("smalian =", cubicvolume(10.0, 12.0, 16.0, "smalian", "imperial", false))
+	fmt.Println("smalian =", cubicvolume(25.0, 29.0, 5.0, "smalian", "metric", false))
+	fmt.Println("smalian =", cubicvolume(10.0, 12.0, 16.0, "smalian", "cunits", false))
 	fmt.Println("cone =", cubicvolume(10.0, 12.0, 16.0, "cone", "imperial", false))
 	fmt.Println("cone =", cubicvolume(25.0, 29.0, 5.0, "cone", "metric", false))
 	fmt.Println("cone =", cubicvolume(10.0, 12.0, 16.0, "cone", "cunits", false))
